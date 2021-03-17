@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Stock Express 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 
-## Available Scripts
+## Library Directory 📙
 
-In the project directory, you can run:
+| Contents                  |
+| ------------------------- |
+| [Built With](#built-with) |
+| [Live Demo](#live-demo)   |
+| [Install](#install)   |
+| [Testing](#testing)   |
+| [Authors](#authors)       |
+| [License](#license)       |
 
-### `yarn start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> Write about the project...
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![screenshot](./assets/)
 
-### `yarn test`
+Additional description of the project and its features...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With 🛠
 
-### `yarn build`
+```
+- React
+- Redux
+- JavaScript
+- Tailwind CSS
+- Heroku
+- VS Code
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=React&logoColor=white&labelColor=000)
+![Redux](https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white&labelColor=000)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white&labelColor=000)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=Tailwind-CSS&logoColor=white&labelColor=000)
+![Heroku](https://img.shields.io/badge/-Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white&labelColor=000)
+![npm](https://img.shields.io/badge/-npm-CB3837?style=for-the-badge&logo=npm&logoColor=white&labelColor=000)
+![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?style=for-the-badge&logo=Visual-Studio-Code&logoColor=white&labelColor=000)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live Demo 🎥
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a href="https://app.netlify.com/start/repos"> LIVE DEMO! </a>
 
-### `yarn eject`
+## Install ⏳
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Follow these steps below to get my Application working. I used [npm](https://www.npmjs.com/) to manage all my packages for React. If you don't have it installed already, you can install it [here](https://www.npmjs.com/get-npm)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. - [ ] Open your `Terminal`
+2. - [ ] Navigate to the directory where you will like to install the repo by running `cd stock-express`
+3. - [ ] Run `git clone git@github.com:DcRonan/stock-express.git` to download <b>or</b> you can download using `HTTPS` by running `git clone https://github.com/DcRonan/stock-express.git` in the terminal
+4. - [ ] Run `cd stock-express` to enter the directory
+5. - [ ] Run `npm i` to install all the packages
+6. - [ ] Run `npm start` and the app will open
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Testing ⚙
 
-## Learn More
+> I have used React's own testing library to test my code, you can have a look through here: [React Testing Library](https://github.com/testing-library/react-testing-library)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. - [ ] Open `Terminal` again
+2. - [ ] Run `cd stock-express` to enter the directory
+3. - [ ] Run `npm test` to start testing
+4. - [ ] All tests will pass ✅
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 👨‍💻 Daniel Ronan
 
-### Analyzing the Bundle Size
+[![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/DcRonan) <br>
+[![LINKEDIN](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/dan-ronan/) <br>
+[![EMAIL](https://img.shields.io/badge/-EMAIL-D14836?style=for-the-badge&logo=Mail.Ru&logoColor=white)](mailto:danielconnorronan@gmail.com) <br>
+[![TWITTER](https://img.shields.io/badge/-TWITTER-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/dc_ronan)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Acknowledgements ⭐
 
-### Making a Progressive Web App
+<<<<<<<<<<<------------->>>>>>>>>>>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to check the [issues page](https://github.com/DcRonan/stock-express/issues).
 
-### Deployment
+### Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Give a ⭐️ if you like this project!
 
-### `yarn build` fails to minify
+### License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Cocoapods](https://img.shields.io/cocoapods/l/AFNetworking?color=red&style=for-the-badge)
