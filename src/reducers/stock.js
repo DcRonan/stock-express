@@ -1,12 +1,7 @@
-const STOCKS = {
-  title: 'BTC Stock',
-  category: 'BTC',
-};
-
-const counterReducer = (stock = STOCKS, action) => {
+const counterReducer = (stock = {}, action) => {
   switch (action.type) {
     case 'SHOW_STOCK':
-      return [stock, action.payload];
+      return action.payload;
     default:
       return stock;
   }
