@@ -11,7 +11,7 @@ const GET_STOCK_LIST = () => async dispatch => {
       type: 'STOCK_LIST_LOADING',
     });
     const response = await axios.get(
-      `https://financialmodelingprep.com/api/v3/quotes/nyse?apikey=${process.env.REACT_APP_STOCK_EXPRESS_API_KEY}`,
+      `https://financialmodelingprep.com/api/v3/stock/list?apikey=${process.env.REACT_APP_STOCK_EXPRESS_API_KEY}`,
     );
 
     dispatch({

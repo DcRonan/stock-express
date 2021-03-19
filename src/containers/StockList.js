@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { GET_STOCK_LIST } from '../actions/index';
 
 const StockList = () => {
@@ -16,7 +17,19 @@ const StockList = () => {
 
   const showData = () => {
     if (stockList.data !== undefined) {
-      return stockList.data.map(el => el.name);
+      return (
+        <div>
+          {stockList.data.map(el => (
+            <>
+              <div>
+                <p key={Math.random().toString(36).substr(2, 9)}>
+                  <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+                </p>
+              </div>
+            </>
+          ))}
+        </div>
+      );
     }
 
     if (stockList.loading) return <p> Loading... </p>;
