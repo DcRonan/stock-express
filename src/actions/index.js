@@ -1,19 +1,11 @@
-const increment = num => {
-  const obj = {
-    type: 'INCREMENT',
-    payload: num,
-  };
+const SHOW_STOCK = stock => ({
+  type: 'SHOW_STOCK',
+  payload: stock,
+});
 
-  return obj;
-};
+const SHOW_COMPANY = name => ({
+  type: 'SHOW_COMPANY',
+  payload: name,
+});
 
-const decrement = num => {
-  const obj = {
-    type: 'DECREMENT',
-    payload: num,
-  };
-
-  return obj;
-};
-
-export { increment, decrement };
+export { SHOW_STOCK, SHOW_COMPANY };

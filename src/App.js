@@ -1,24 +1,24 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions';
+import { useSelector } from 'react-redux';
 
 const App = () => {
-  const counter = useSelector(state => state.counter);
-  const isLogged = useSelector(state => state.isLogged);
-  const dispatch = useDispatch();
+  const stock = useSelector(state => state.stock);
+  const company = useSelector(state => state.company);
 
   return (
     <>
       <div>
-        Counter:
-        {counter}
+        <b>Stock:</b>
+        <br />
+        {stock.title}
+        <br />
+        <b>Category:</b>
+        <br />
+        {stock.category}
       </div>
-      <button onClick={() => dispatch(increment(5))} type="button"> + </button>
-      <button onClick={() => dispatch(decrement(10))} type="button"> - </button>
-      <div>
-        Am I logged in ?
-        {isLogged ? <div> SHOULD NOT SEE</div> : '' }
-      </div>
+      <b>Company:</b>
+      <br />
+      {company.title}
     </>
   );
 };
