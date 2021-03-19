@@ -1,8 +1,8 @@
-import ADD_STOCK from '../actions/index';
+import { GET_STOCK } from '../actions/index';
 
 const counterReducer = (stock = {}, action) => {
   switch (action.type) {
-    case ADD_STOCK:
+    case GET_STOCK:
       return action.payload;
     default:
       return stock;
