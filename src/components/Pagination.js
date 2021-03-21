@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const Pagination = ({ stocksPerPage, totalStocks, paginate }) => {
   const pageNumbers = [];
@@ -14,7 +13,9 @@ const Pagination = ({ stocksPerPage, totalStocks, paginate }) => {
       <ul>
         {pageNumbers.map(number => (
           <li key={number}>
-            <Link to={paginate(number)}>{number}</Link>
+            <button type="button" onClick={() => paginate(number)}>
+              {number}
+            </button>
           </li>
         ))}
       </ul>
