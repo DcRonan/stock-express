@@ -1,31 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Routes from '../routes';
-import Stocks from './Stocks';
 import Pagination from './Pagination';
+import StockList from '../containers/StockList';
 
 const App = () => {
-  const [stocks, setStocks] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const stocks = useSelector(state => state.stockList);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [stocksPerPage] = useState(10);
-
-  useEffect(() => {
-    const fetchStocks = async () => {
-      setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      setStocks(res.data);
-      setLoading(false);
-    };
-
-    fetchStocks();
-  }, []);
 
   // GET current stocks
   const indexOfLastStock = currentPage * stocksPerPage;
   const indexOfFirstStock = indexOfLastStock - stocksPerPage;
-  const currentStocks = stocks.slice(indexOfFirstStock, indexOfLastStock);
+  const currentStocks = stocks.data.slice(indexOfFirstStock, indexOfLastStock);
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
@@ -38,10 +27,10 @@ const App = () => {
         </h1>
       </nav>
       <Routes />
-      <Stocks stocks={currentStocks} loading={loading} />
+      <StockList stocks={currentStocks} loading={stocks.loading} error={stocks.errorMsg} />
       <Pagination
         stocksPerPage={stocksPerPage}
-        totalStocks={stocks.length}
+        totalStocks={stocks.data.length}
         paginate={paginate}
       />
     </>

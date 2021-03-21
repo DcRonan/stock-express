@@ -1,25 +1,29 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GET_STOCK_LIST } from '../actions/index';
 
-const StockList = () => {
+const StockList = ({ stocks, loading, error }) => {
   const dispatch = useDispatch();
-  const stockList = useSelector(state => state.stockList);
 
   const fetchData = () => {
-    dispatch(GET_STOCK_LIST(stockList.data));
+    dispatch(GET_STOCK_LIST(stocks));
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  if (loading) return <p> Loading... </p>;
+
+  if (error) return <p> {error} </p>;
+
   const showData = () => {
-    if (stockList.data !== undefined) {
+    if (stocks !== undefined) {
       return (
         <div>
-          {stockList.data.map(el => (
+          {stocks.map(el => (
             <>
               <div>
                 <p key={Math.random().toString(36).substr(2, 9)}>
@@ -32,13 +36,7 @@ const StockList = () => {
       );
     }
 
-    if (stockList.loading) return <p> Loading... </p>;
-
-    if (stockList.errorMsg !== '') {
-      return <p>{stockList.errorMsg}</p>;
-    }
-
-    return <p> ERROR! - unable to get data </p>;
+    return <p> {error} </p>;
   };
 
   return <div>{showData()}</div>;
