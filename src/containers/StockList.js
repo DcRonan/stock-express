@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -44,28 +45,6 @@ const StockList = () => {
               </>
             ))}
           </div>
-          {currentPage > 2 ? (
-            <button type="button" onClick={() => paginate(1)}>
-              Back to first page
-            </button>
-          ) : (
-            ''
-          )}
-          {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
-          <p>
-            <b>{currentPage}</b>
-          </p>
-          <p>{currentPage + 1}</p>
-          {currentPage > 1 ? (
-            <button type="button" onClick={() => paginate(currentPage - 1)}>
-              Previous
-            </button>
-          ) : (
-            ''
-          )}
-          <button type="button" onClick={() => paginate(currentPage + 1)}>
-            Next
-          </button>
           <Pagination
             stocksPerPage={stocksPerPage}
             totalStocks={stocks.data.length}
@@ -77,7 +56,33 @@ const StockList = () => {
     return <p>{stocks.errorMsg}</p>;
   };
 
-  return <div>{showData()}</div>;
+  return (
+    <>
+      <div>{showData()}</div>
+      {currentPage > 2 ? (
+        <button type="button" onClick={() => paginate(1)}>
+          Back to first page
+        </button>
+      ) : (
+        ''
+      )}
+      {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
+      <p>
+        <b>{currentPage}</b>
+      </p>
+      <p>{currentPage + 1}</p>
+      {currentPage > 1 ? (
+        <button type="button" onClick={() => paginate(currentPage - 1)}>
+          Previous
+        </button>
+      ) : (
+        ''
+      )}
+      <button type="button" onClick={() => paginate(currentPage + 1)}>
+        Next
+      </button>
+    </>
+  );
 };
 
 export default StockList;
