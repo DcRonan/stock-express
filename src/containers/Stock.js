@@ -13,7 +13,15 @@ const Stock = props => {
   }, []);
 
   const showData = () => {
-    if (stock.data[stockSymbol] !== undefined) return <p> Have data </p>;
+    if (stock.data[stockSymbol] !== undefined) {
+      const stockData = stock.data[stockSymbol];
+      return (
+        <>
+          <h2> {stockData[0].symbol} </h2>
+          <h3> {stockData[0].companyName} </h3>
+        </>
+      );
+    }
     if (stock.loading) return <p> Loading... </p>;
     if (stock.errorMsg !== '') return <p>{stock.errorMsg}</p>;
     return <p> Getting stock information </p>;
@@ -21,7 +29,6 @@ const Stock = props => {
 
   return (
     <div>
-      <h1>Stock</h1>
       {showData()}
     </div>
   );
