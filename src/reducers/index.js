@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import stockReducer from './stock';
+import stockMultipleReducer from './stock';
 import stockListReducer from './stockList';
 
 const allReducers = combineReducers({
-  stock: stockReducer,
+  stock: stockMultipleReducer,
   stockList: stockListReducer,
 });
 

@@ -1,12 +1,36 @@
-import { GET_STOCK } from '../actions/index';
+const defaultState = {
+  loading: false,
+  data: {},
+  errorMsg: '',
+};
 
-const counterReducer = (stock = {}, action) => {
+const stockMultipleReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case GET_STOCK:
-      return action.payload;
+    case 'STOCK_MULTIPLE_LOADING':
+      return {
+        ...state,
+        loading: true,
+        errorMsg: '',
+      };
+    case 'STOCK_MULTIPLE_FAIL':
+      return {
+        ...state,
+        loading: false,
+        errorMsg: 'Unable to retrieve stock data',
+      };
+    case 'STOCK_MULTIPLE_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        errorMsg: '',
+        data: {
+          ...state.data,
+          [action.stockName]: action.payload,
+        },
+      };
     default:
-      return stock;
+      return state;
   }
 };
 
-export default counterReducer;
+export default stockMultipleReducer;
