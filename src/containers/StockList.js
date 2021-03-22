@@ -56,9 +56,13 @@ const StockList = () => {
             <b>{currentPage}</b>
           </p>
           <p>{currentPage + 1}</p>
-          <button type="button" onClick={() => paginate(currentPage - 1)}>
-            Previous
-          </button>
+          {currentPage > 1 ? (
+            <button type="button" onClick={() => paginate(currentPage - 1)}>
+              Previous
+            </button>
+          ) : (
+            ''
+          )}
           <button type="button" onClick={() => paginate(currentPage + 1)}>
             Next
           </button>
