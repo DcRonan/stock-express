@@ -19,6 +19,8 @@ const Stock = props => {
         <>
           <h2> {stockData[0].symbol} </h2>
           <h3> {stockData[0].companyName} </h3>
+          <img src={stockData[0].image} alt="company logo"/>
+          <p> <b>Changes:</b> {stockData[0].changes} </p>
         </>
       );
     }

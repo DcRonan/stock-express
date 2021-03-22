@@ -38,11 +38,9 @@ const StockList = () => {
           <div>
             {currentStocks.map(el => (
               <>
-                <div>
-                  <p key={Math.random().toString(36).substr(2, 9)}>
-                    <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
-                  </p>
-                </div>
+                <p key={Math.random().toString(36).substr(2, 9)}>
+                  <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+                </p>
               </>
             ))}
           </div>
