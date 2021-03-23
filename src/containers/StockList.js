@@ -15,7 +15,14 @@ const StockList = () => {
   const [clearSearch, setClearSearch] = useState(false);
 
   const fetchFilterData = () => {
-    dispatch(GET_FILTER(filterValue)), setClearSearch(true);
+    dispatch(GET_FILTER(filterValue));
+    setClearSearch(true);
+    paginate(1);
+  };
+
+  const clearSearchData = () => {
+    setClearSearch(false);
+    paginate(1);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,11 +58,9 @@ const StockList = () => {
           <>
             <div>
               {currentStocks.map(el => (
-                <>
-                  <p key={Math.random().toString(36).substr(2, 9)}>
-                    <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
-                  </p>
-                </>
+                <p key={Math.random().toString(36).substr(2, 9)}>
+                  <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+                </p>
               ))}
             </div>
             <Pagination
@@ -69,11 +74,9 @@ const StockList = () => {
           <div>
             {/* MOVE TO COMPONENT */}
             {filteredStocks.map(el => (
-              <>
-                <p key={Math.random().toString(36).substr(2, 9)}>
-                  <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
-                </p>
-              </>
+              <p key={Math.random().toString(36).substr(2, 9)}>
+                <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+              </p>
             ))}
           </div>
         );
@@ -114,7 +117,7 @@ const StockList = () => {
       <button type="button" onClick={() => fetchFilterData()}>
         DISPATCH
       </button>
-      <button type="button" onClick={() => setClearSearch(false)}>
+      <button type="button" onClick={() => clearSearchData()}>
         Clear search
       </button>
     </>
