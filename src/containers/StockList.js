@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GET_STOCK_LIST, GET_FILTER } from '../actions/index';
@@ -29,6 +29,9 @@ const StockList = () => {
   // Filtered stocks
   const filteredStocks = filter.data.slice(indexOfFirstStock, indexOfLastStock);
 
+  // Search box
+  const searchBox = useRef(null);
+
   const fetchFilterData = () => {
     dispatch(GET_FILTER(filterValue));
     setClearSearch(true);
@@ -38,8 +41,10 @@ const StockList = () => {
   const clearSearchData = () => {
     setClearSearch(false);
     paginate(1);
+    searchBox.current.value = '';
   };
 
+  // All data
   const fetchData = () => {
     dispatch(GET_STOCK_LIST(stocks));
   };
@@ -84,6 +89,7 @@ const StockList = () => {
   return (
     <>
       <div>{showData()}</div>
+      {/* PAGINATION */}
       {currentPage > 2 ? (
         <button type="button" onClick={() => paginate(1)}>
           Back to first page
@@ -107,8 +113,12 @@ const StockList = () => {
         Next
       </button>
       <br />
-      {/* MOVE TO COMPONENT */}
-      <input type="search" onChange={e => setFilter(e.target.value)} />
+      {/* SEARCH */}
+      <input
+        ref={searchBox}
+        type="search"
+        onChange={e => setFilter(e.target.value)}
+      />
       <button type="button" onClick={() => fetchFilterData()}>
         DISPATCH
       </button>
