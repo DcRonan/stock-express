@@ -115,6 +115,7 @@ const StockList = () => {
       <br />
       {/* SEARCH */}
       <input
+        className="border-2"
         ref={searchBox}
         type="search"
         onChange={e => setFilter(e.target.value)}
