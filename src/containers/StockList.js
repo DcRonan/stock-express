@@ -88,44 +88,46 @@ const StockList = () => {
 
   return (
     <>
-      <div>{showData()}</div>
-      {/* PAGINATION */}
-      {currentPage > 2 ? (
-        <button type="button" onClick={() => paginate(1)}>
-          Back to first page
+      <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light">
+        <div>{showData()}</div>
+        {/* PAGINATION */}
+        {currentPage > 2 ? (
+          <button type="button" onClick={() => paginate(1)}>
+            Back to first page
+          </button>
+        ) : (
+          ''
+        )}
+        {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
+        <p>
+          <b>{currentPage}</b>
+        </p>
+        <p>{currentPage + 1}</p>
+        {currentPage > 1 ? (
+          <button type="button" onClick={() => paginate(currentPage - 1)}>
+            Previous
+          </button>
+        ) : (
+          ''
+        )}
+        <button type="button" onClick={() => paginate(currentPage + 1)}>
+          Next
         </button>
-      ) : (
-        ''
-      )}
-      {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
-      <p>
-        <b>{currentPage}</b>
-      </p>
-      <p>{currentPage + 1}</p>
-      {currentPage > 1 ? (
-        <button type="button" onClick={() => paginate(currentPage - 1)}>
-          Previous
+        <br />
+        {/* SEARCH */}
+        <input
+          className="border-2"
+          ref={searchBox}
+          type="search"
+          onChange={e => setFilter(e.target.value)}
+        />
+        <button type="button" onClick={() => fetchFilterData()}>
+          DISPATCH
         </button>
-      ) : (
-        ''
-      )}
-      <button type="button" onClick={() => paginate(currentPage + 1)}>
-        Next
-      </button>
-      <br />
-      {/* SEARCH */}
-      <input
-        className="border-2"
-        ref={searchBox}
-        type="search"
-        onChange={e => setFilter(e.target.value)}
-      />
-      <button type="button" onClick={() => fetchFilterData()}>
-        DISPATCH
-      </button>
-      <button type="button" onClick={() => clearSearchData()}>
-        Clear search
-      </button>
+        <button type="button" onClick={() => clearSearchData()}>
+          Clear search
+        </button>
+      </div>
     </>
   );
 };

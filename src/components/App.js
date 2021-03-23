@@ -1,15 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Routes from '../routes';
+import Navbar from './Navbar';
 
 const App = () => (
   <>
-    <nav>
-      <h1>
-        <NavLink to="/"> Home </NavLink>
-      </h1>
-    </nav>
-    <Routes />
+    <div className="flex w-screen">
+      <Navbar />
+      <main className="w-full bg-darkgrey">
+        <Routes />
+      </main>
+    </div>
   </>
 );
 
