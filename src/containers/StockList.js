@@ -62,13 +62,57 @@ const StockList = () => {
       if (clearSearch === false) {
         return (
           <>
-            <div>
-              {currentStocks.map(el => (
-                <p key={Math.random().toString(36).substr(2, 9)}>
-                  <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
-                </p>
-              ))}
-            </div>
+            <header className="mb-4">
+              <h1 className="text-3xl font-medium">Stocks</h1>
+            </header>
+            <section className="border-t pt-6 border-gray-700">
+              <div className="flex w-full">
+                <div className="w-2/12">
+                  Symbol
+                  {currentStocks.map(el => (
+                    <div
+                      className="w-full border-t border-gray-500 py-4 text-blue-500"
+                      key={Math.random().toString(36).substr(2, 9)}
+                    >
+                      <Link to={`/stock/${el.symbol}`}>{el.symbol}</Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-6/12">
+                  Name
+                  {currentStocks.map(el => (
+                    <div
+                      className="w-full border-t border-gray-500 py-4 text-blue-500"
+                      key={Math.random().toString(36).substr(2, 9)}
+                    >
+                      <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-2/12">
+                  Price
+                  {currentStocks.map(el => (
+                    <div
+                      className="w-full border-t border-gray-500 py-4"
+                      key={Math.random().toString(36).substr(2, 9)}
+                    >
+                      <Link to={`/stock/${el.symbol}`}>{el.price}</Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-2/12">
+                  % Change
+                  {currentStocks.map(el => (
+                    <div
+                      className="w-full border-t border-gray-500 py-4"
+                      key={Math.random().toString(36).substr(2, 9)}
+                    >
+                      <Link to={`/stock/${el.symbol}`}>{el.change}</Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
             <Pagination
               stocksPerPage={stocksPerPage}
               totalStocks={stocks.data.length}
@@ -89,7 +133,7 @@ const StockList = () => {
   return (
     <>
       <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light">
-        <div>{showData()}</div>
+        {showData()}
         {/* PAGINATION */}
         {currentPage > 2 ? (
           <button type="button" onClick={() => paginate(1)}>

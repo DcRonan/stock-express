@@ -30,7 +30,7 @@ const Stock = props => {
   };
 
   return (
-    <div>
+    <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light">
       {showData()}
     </div>
   );
