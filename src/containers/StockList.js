@@ -1,18 +1,33 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GET_STOCK_LIST, GET_FILTER } from '../actions/index';
 import Pagination from '../components/Pagination';
+import Filter from '../components/Filter';
 
 const StockList = () => {
   const dispatch = useDispatch();
   const stocks = useSelector(state => state.stockList);
 
-  // Filter ------ MOVE TO COMPONENT
+  // Filter
   const filter = useSelector(state => state.filter);
   const [filterValue, setFilter] = useState('');
   const [clearSearch, setClearSearch] = useState(false);
+
+  // Current page and amount of stocks on each
+  const [currentPage, setCurrentPage] = useState(1);
+  const [stocksPerPage] = useState(10);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  // GET current stocks
+  const indexOfLastStock = currentPage * stocksPerPage;
+  const indexOfFirstStock = indexOfLastStock - stocksPerPage;
+  const currentStocks = stocks.data.slice(indexOfFirstStock, indexOfLastStock);
+
+  // Filtered stocks
+  const filteredStocks = filter.data.slice(indexOfFirstStock, indexOfLastStock);
 
   const fetchFilterData = () => {
     dispatch(GET_FILTER(filterValue));
@@ -24,20 +39,6 @@ const StockList = () => {
     setClearSearch(false);
     paginate(1);
   };
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [stocksPerPage] = useState(10);
-
-  // GET current stocks
-  const indexOfLastStock = currentPage * stocksPerPage;
-  const indexOfFirstStock = indexOfLastStock - stocksPerPage;
-  const currentStocks = stocks.data.slice(indexOfFirstStock, indexOfLastStock);
-
-  // MOVE TO COMPONENT
-  const filteredStocks = filter.data.slice(indexOfFirstStock, indexOfLastStock);
-
-  // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const fetchData = () => {
     dispatch(GET_STOCK_LIST(stocks));
@@ -69,17 +70,11 @@ const StockList = () => {
             />
           </>
         );
-      } else if (clearSearch === true) {
-        return (
-          <div>
-            {/* MOVE TO COMPONENT */}
-            {filteredStocks.map(el => (
-              <p key={Math.random().toString(36).substr(2, 9)}>
-                <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
-              </p>
-            ))}
-          </div>
-        );
+      }
+    }
+    if (filteredStocks !== undefined) {
+      if (clearSearch === true) {
+        return <Filter filteredStocks={filteredStocks} />;
       }
     }
 
