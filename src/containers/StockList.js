@@ -71,11 +71,11 @@ const StockList = () => {
                   <h2 className="pb-2">Symbol</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs"
+                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs lg:text-base"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
                       <Link to={`/stock/${el.symbol}`}>
-                        {el.symbol === null ? 'N/A' : el.symbol}
+                        <div>{el.symbol === null ? 'N/A' : el.symbol}</div>
                       </Link>
                     </div>
                   ))}
@@ -84,7 +84,7 @@ const StockList = () => {
                   <h2 className="pb-2">Name</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs"
+                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs lg:text-base"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
                       <Link to={`/stock/${el.symbol}`}>
@@ -97,12 +97,10 @@ const StockList = () => {
                   <h2 className="pb-2">Price</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-xs"
+                      className="w-full border-t border-gray-500 py-4 text-xs lg:text-base"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>
-                        {el.price === null || 0 ? 'N/A' : el.price}
-                      </Link>
+                      {el.price === null || 0 ? 'N/A' : el.price}
                     </div>
                   ))}
                 </div>
@@ -110,12 +108,18 @@ const StockList = () => {
                   <h2 className="pb-2">% Change</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-xs"
+                      className="w-full border-t border-gray-500 py-2 text-xs lg:text-base"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>
+                      <div
+                        className={`rounded-md ${
+                          /-/.test(el.change) === true || /[N/A]/.test(el.change) === true
+                            ? 'bg-red-900 bg-opacity-5 text-red-600'
+                            : 'bg-green-800 text-green-300'
+                        } font-semibold bg-opacity-50 p-2 w-20 flex justify-center`}
+                      >
                         {el.change === null ? 'N/A' : el.change}
-                      </Link>
+                      </div>
                     </div>
                   ))}
                 </div>
