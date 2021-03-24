@@ -27,11 +27,8 @@ const Stock = ({ match }) => {
         </>
       );
     }
-    if (stock.data[stockSymbol] === undefined) {
-      return <p>Cannot retrieve stock information</p>;
-    }
     if (stock.loading) return <p> Loading... </p>;
-    return <p> Getting stock information </p>;
+    return <p>Cannot retrieve stock information</p>;
   };
 
   return (
