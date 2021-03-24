@@ -67,47 +67,55 @@ const StockList = () => {
             </header>
             <section className="border-t pt-6 border-gray-700">
               <div className="flex w-full">
-                <div className="w-2/12">
-                  Symbol
+                <div className="w-2/6 md:w-2/12">
+                  <h2 className="pb-2">Symbol</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-blue-500"
+                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.symbol === null ? 'N/A' : el.symbol}</Link>
+                      <Link to={`/stock/${el.symbol}`}>
+                        {el.symbol === null ? 'N/A' : el.symbol}
+                      </Link>
                     </div>
                   ))}
                 </div>
-                <div className="w-6/12">
-                  Name
+                <div className="md:w-6/12 hidden md:block">
+                  <h2 className="pb-2">Name</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4 text-blue-500"
+                      className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.name === null ? 'N/A' : el.name}</Link>
+                      <Link to={`/stock/${el.symbol}`}>
+                        {el.name === null ? 'N/A' : el.name.slice(0, 40)}
+                      </Link>
                     </div>
                   ))}
                 </div>
-                <div className="w-2/12">
-                  Price
+                <div className="w-2/6 md:w-2/12">
+                  <h2 className="pb-2">Price</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4"
+                      className="w-full border-t border-gray-500 py-4 text-xs"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.price === null || 0 ? 'N/A' : el.price}</Link>
+                      <Link to={`/stock/${el.symbol}`}>
+                        {el.price === null || 0 ? 'N/A' : el.price}
+                      </Link>
                     </div>
                   ))}
                 </div>
-                <div className="w-2/12">
-                  % Change
+                <div className="w-2/6 md:w-2/12">
+                  <h2 className="pb-2">% Change</h2>
                   {currentStocks.map(el => (
                     <div
-                      className="w-full border-t border-gray-500 py-4"
+                      className="w-full border-t border-gray-500 py-4 text-xs"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.change === null ? 'N/A' : el.change}</Link>
+                      <Link to={`/stock/${el.symbol}`}>
+                        {el.change === null ? 'N/A' : el.change}
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -132,7 +140,7 @@ const StockList = () => {
 
   return (
     <>
-      <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light">
+      <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light bg-darkgrey">
         {showData()}
         {/* PAGINATION */}
         {currentPage > 2 ? (

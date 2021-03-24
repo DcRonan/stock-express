@@ -6,7 +6,7 @@ const GET_STOCK_LIST = () => async dispatch => {
       type: 'STOCK_LIST_LOADING',
     });
     const response = await axios.get(
-      `https://financialmodelingprep.com/api/v3/quotes/nyse?apikey=${process.env.REACT_APP_STOCK_EXPRESS_API_KEY}`, // https://financialmodelingprep.com/api/v3/quotes/nyse?
+      `https://financialmodelingprep.com/api/v3/quotes/nyse?apikey=${process.env.REACT_APP_STOCK_EXPRESS_SECOND_API_KEY}`, // https://financialmodelingprep.com/api/v3/quotes/nyse?
     );
 
     dispatch({
@@ -26,7 +26,7 @@ const GET_STOCK = stock => async dispatch => {
       type: 'STOCK_MULTIPLE_LOADING',
     });
     const response = await axios.get(
-      `https://financialmodelingprep.com/api/v3/profile/${stock}?apikey=${process.env.REACT_APP_STOCK_EXPRESS_API_KEY}`,
+      `https://financialmodelingprep.com/api/v3/profile/${stock}?apikey=${process.env.REACT_APP_STOCK_EXPRESS_SECOND_API_KEY}`,
     );
 
     dispatch({
@@ -47,7 +47,7 @@ const GET_FILTER = filter => async dispatch => {
       type: 'FILTER_LOADING',
     });
     const response = await axios.get(
-      `https://financialmodelingprep.com/api/v3/search?query=${filter}&limit=50&apikey=${process.env.REACT_APP_STOCK_EXPRESS_API_KEY}`,
+      `https://financialmodelingprep.com/api/v3/search?query=${filter}&limit=50&apikey=${process.env.REACT_APP_STOCK_EXPRESS_SECOND_API_KEY}`,
     );
 
     dispatch({
