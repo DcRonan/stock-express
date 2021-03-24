@@ -73,8 +73,6 @@ Reference: Catalogue of Dog Clothes
 3. - [ ] Run `npm test` to start testing
 4. - [ ] All tests will pass ✅
 
-![tests](./public/assets/tests.png)
-
 ## Authors
 
 ### 👨‍💻 Daniel Ronan
