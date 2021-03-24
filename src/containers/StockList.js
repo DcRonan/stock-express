@@ -32,16 +32,26 @@ const StockList = () => {
   // Search box
   const searchBox = useRef(null);
 
+  // Clear search button
+  const clearSearchBtn = useRef(null);
+
+  // Submit button
+  const submitBtn = useRef(null);
+
   const fetchFilterData = () => {
     dispatch(GET_FILTER(filterValue));
     setClearSearch(true);
     paginate(1);
+    clearSearchBtn.current.classList = 'block focus:outline-none';
+    submitBtn.current.classList = 'bg-blue-600 py-1.5 px-2 rounded-md focus:outline-none border-0 hidden';
   };
 
   const clearSearchData = () => {
     setClearSearch(false);
     paginate(1);
     searchBox.current.value = '';
+    submitBtn.current.classList = 'bg-blue-600 py-1.5 px-2 rounded-md focus:outline-none border-0 block';
+    clearSearchBtn.current.classList = 'hidden focus:outline-none';
   };
 
   // All data
@@ -146,17 +156,28 @@ const StockList = () => {
     <>
       <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light bg-darkgrey">
         {/* SEARCH */}
-        <div className="float-right">
+        <div className="float-right pr-2 space-x-2 flex">
           <input
-            className="border-2"
+            className="border-2 text-black focus:outline-none px-2 py-1 font-light rounded-md"
             ref={searchBox}
+            placeholder="Amazon..."
             type="search"
             onChange={e => setFilter(e.target.value)}
           />
-          <button type="button" onClick={() => fetchFilterData()}>
-            DISPATCH
+          <button
+            ref={submitBtn}
+            type="button"
+            onClick={() => fetchFilterData()}
+            className="bg-blue-600 py-1.5 px-2 rounded-md focus:outline-none border-0"
+          >
+            Search
           </button>
-          <button type="button" onClick={() => clearSearchData()}>
+          <button
+            ref={clearSearchBtn}
+            type="button"
+            onClick={() => clearSearchData()}
+            className="hidden focus:outline-none border-0"
+          >
             Clear search
           </button>
         </div>
