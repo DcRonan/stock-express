@@ -68,7 +68,7 @@ const StockList = () => {
             <section className="border-t pt-6 border-gray-700">
               <div className="flex w-full">
                 <div className="w-2/6 md:w-2/12">
-                  <h2 className="pb-2">Symbol</h2>
+                  <h2 className="pb-2 font-semibold">Symbol</h2>
                   {currentStocks.map(el => (
                     <div
                       className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs lg:text-base"
@@ -81,7 +81,7 @@ const StockList = () => {
                   ))}
                 </div>
                 <div className="md:w-6/12 hidden md:block">
-                  <h2 className="pb-2">Name</h2>
+                  <h2 className="pb-2 font-semibold">Name</h2>
                   {currentStocks.map(el => (
                     <div
                       className="w-full border-t border-gray-500 py-4 text-blue-500 text-xs lg:text-base"
@@ -94,7 +94,7 @@ const StockList = () => {
                   ))}
                 </div>
                 <div className="w-2/6 md:w-2/12">
-                  <h2 className="pb-2">Price</h2>
+                  <h2 className="pb-2 font-semibold">Price</h2>
                   {currentStocks.map(el => (
                     <div
                       className="w-full border-t border-gray-500 py-4 text-xs lg:text-base"
@@ -105,7 +105,7 @@ const StockList = () => {
                   ))}
                 </div>
                 <div className="w-2/6 md:w-2/12">
-                  <h2 className="pb-2">% Change</h2>
+                  <h2 className="pb-2 font-semibold">% Change</h2>
                   {currentStocks.map(el => (
                     <div
                       className="w-full border-t border-gray-500 py-2 text-xs lg:text-base"
@@ -113,7 +113,7 @@ const StockList = () => {
                     >
                       <div
                         className={`rounded-md ${
-                          /-/.test(el.change) === true || /[N/A]/.test(el.change) === true
+                          /-/.test(el.change) === true
                             ? 'bg-red-900 bg-opacity-5 text-red-600'
                             : 'bg-green-800 text-green-300'
                         } font-semibold bg-opacity-50 p-2 w-20 flex justify-center`}
@@ -145,6 +145,21 @@ const StockList = () => {
   return (
     <>
       <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light bg-darkgrey">
+        {/* SEARCH */}
+        <div className="float-right">
+          <input
+            className="border-2"
+            ref={searchBox}
+            type="search"
+            onChange={e => setFilter(e.target.value)}
+          />
+          <button type="button" onClick={() => fetchFilterData()}>
+            DISPATCH
+          </button>
+          <button type="button" onClick={() => clearSearchData()}>
+            Clear search
+          </button>
+        </div>
         {showData()}
         {/* PAGINATION */}
         {currentPage > 2 ? (
@@ -170,19 +185,6 @@ const StockList = () => {
           Next
         </button>
         <br />
-        {/* SEARCH */}
-        <input
-          className="border-2"
-          ref={searchBox}
-          type="search"
-          onChange={e => setFilter(e.target.value)}
-        />
-        <button type="button" onClick={() => fetchFilterData()}>
-          DISPATCH
-        </button>
-        <button type="button" onClick={() => clearSearchData()}>
-          Clear search
-        </button>
       </div>
     </>
   );
