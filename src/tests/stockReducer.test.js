@@ -19,4 +19,27 @@ describe('Stock reducer', () => {
       errorMsg: '',
     });
   });
+
+  it('should handle STOCK_MULTIPLE_FAIL', () => {
+    expect(
+      reducer([], {
+        type: 'STOCK_MULTIPLE_FAIL',
+      }),
+    ).toEqual({
+      loading: false,
+      errorMsg: 'Unable to retrieve stock data',
+    });
+  });
+
+  it('should handle STOCK_MULTIPLE_SUCCESS', () => {
+    expect(
+      reducer([], {
+        type: 'STOCK_MULTIPLE_SUCCESS',
+      }),
+    ).toEqual({
+      loading: false,
+      errorMsg: '',
+      data: { undefined },
+    });
+  });
 });
