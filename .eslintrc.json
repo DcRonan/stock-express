@@ -23,7 +23,7 @@
     "arrow-parens": ["error", "as-needed"]
   },
   "ignorePatterns": [
-    "dist/",
+    "public/",
     "build/"
   ]
 }
