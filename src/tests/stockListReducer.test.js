@@ -1,18 +1,18 @@
-import reducer from '../reducers/stockList';
+import reducer from '../reducers/stock';
 
-describe('Stock List reducer', () => {
+describe('Stock reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
       loading: false,
-      data: [],
+      data: {},
       errorMsg: '',
     });
   });
 
-  it('should handle STOCK_LIST_LOADING', () => {
+  it('should handle STOCK_MULTIPLE_LOADING', () => {
     expect(
       reducer([], {
-        type: 'STOCK_LIST_LOADING',
+        type: 'STOCK_MULTIPLE_LOADING',
       }),
     ).toEqual({
       loading: true,
@@ -20,26 +20,26 @@ describe('Stock List reducer', () => {
     });
   });
 
-  it('should handle STOCK_LIST_FAIL', () => {
+  it('should handle STOCK_MULTIPLE_FAIL', () => {
     expect(
       reducer([], {
-        type: 'STOCK_LIST_FAIL',
+        type: 'STOCK_MULTIPLE_FAIL',
       }),
     ).toEqual({
       loading: false,
-      errorMsg: 'Failed to load',
+      errorMsg: 'Unable to retrieve stock data',
     });
   });
 
-  it('should handle STOCK_LIST_SUCCESS', () => {
+  it('should handle STOCK_MULTIPLE_SUCCESS', () => {
     expect(
       reducer([], {
-        type: 'STOCK_LIST_SUCCESS',
+        type: 'STOCK_MULTIPLE_SUCCESS',
       }),
     ).toEqual({
       loading: false,
       errorMsg: '',
-      data: undefined,
+      data: { undefined },
     });
   });
 });
