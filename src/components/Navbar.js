@@ -11,9 +11,6 @@ const Navbar = () => (
           alt="stock app logo"
         />
       </NavLink>
-      <button className="sm:mt-6" type="button">
-        <i className="fas fa-search fa-2x" />
-      </button>
     </div>
   </nav>
 );

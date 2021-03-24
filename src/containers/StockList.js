@@ -42,7 +42,7 @@ const StockList = () => {
     dispatch(GET_FILTER(filterValue));
     setClearSearch(true);
     paginate(1);
-    clearSearchBtn.current.classList = 'block focus:outline-none';
+    clearSearchBtn.current.classList = 'block focus:outline-none border-0 bg-red-600 py-1.5 px-2 rounded-md';
     submitBtn.current.classList = 'bg-blue-600 py-1.5 px-2 rounded-md focus:outline-none border-0 hidden';
   };
 
@@ -176,9 +176,9 @@ const StockList = () => {
             ref={clearSearchBtn}
             type="button"
             onClick={() => clearSearchData()}
-            className="hidden focus:outline-none border-0"
+            className="hidden focus:outline-none border-0 bg-red-600 py-1.5 px-2 rounded-md"
           >
-            Clear search
+            Clear
           </button>
         </div>
         {showData()}
