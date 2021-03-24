@@ -7,7 +7,7 @@ const Navbar = () => (
       <NavLink to="/">
         <img
           className="h-16 md:h-20"
-          src="assets/stock.svg"
+          src="/assets/stock.svg"
           alt="stock app logo"
         />
       </NavLink>

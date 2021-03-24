@@ -1,10 +1,10 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { GET_STOCK } from '../actions/index';
 
-const Stock = props => {
-  const stockSymbol = props.match.params.stock;
+const Stock = ({ match }) => {
+  const stockSymbol = match.params.stock;
   const dispatch = useDispatch();
   const stock = useSelector(state => state.stock);
 
@@ -13,22 +13,22 @@ const Stock = props => {
   }, []);
 
   const showData = () => {
-    if (stock.data[stockSymbol[0]] === undefined)
-      return <p>Cannot retrieve stock information</p>;
-
     if (stock.data[stockSymbol] !== undefined) {
       const stockData = stock.data[stockSymbol];
       return (
         <>
-          <h2> {stockData[0].symbol} </h2>
-          <h3> {stockData[0].companyName} </h3>
+          <h2>{stockData[0].symbol}</h2>
+          <h3>{stockData[0].companyName}</h3>
           <img src={stockData[0].image} alt="company logo" />
           <p>
-            {' '}
-            <b>Changes:</b> {stockData[0].changes}{' '}
+            <b>Changes:</b>
+            {stockData[0].changes}
           </p>
         </>
       );
+    }
+    if (stock.data[stockSymbol] === undefined) {
+      return <p>Cannot retrieve stock information</p>;
     }
     if (stock.loading) return <p> Loading... </p>;
     return <p> Getting stock information </p>;
@@ -42,3 +42,11 @@ const Stock = props => {
 };
 
 export default Stock;
+
+Stock.defaultProps = {
+  match: [],
+};
+
+Stock.propTypes = {
+  match: PropTypes.instanceOf(Object),
+};
