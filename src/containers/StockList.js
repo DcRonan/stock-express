@@ -74,7 +74,7 @@ const StockList = () => {
                       className="w-full border-t border-gray-500 py-4 text-blue-500"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.symbol}</Link>
+                      <Link to={`/stock/${el.symbol}`}>{el.symbol === null ? 'N/A' : el.symbol}</Link>
                     </div>
                   ))}
                 </div>
@@ -85,7 +85,7 @@ const StockList = () => {
                       className="w-full border-t border-gray-500 py-4 text-blue-500"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.name}</Link>
+                      <Link to={`/stock/${el.symbol}`}>{el.name === null ? 'N/A' : el.name}</Link>
                     </div>
                   ))}
                 </div>
@@ -96,7 +96,7 @@ const StockList = () => {
                       className="w-full border-t border-gray-500 py-4"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.price}</Link>
+                      <Link to={`/stock/${el.symbol}`}>{el.price === null || 0 ? 'N/A' : el.price}</Link>
                     </div>
                   ))}
                 </div>
@@ -107,7 +107,7 @@ const StockList = () => {
                       className="w-full border-t border-gray-500 py-4"
                       key={Math.random().toString(36).substr(2, 9)}
                     >
-                      <Link to={`/stock/${el.symbol}`}>{el.change}</Link>
+                      <Link to={`/stock/${el.symbol}`}>{el.change === null ? 'N/A' : el.change}</Link>
                     </div>
                   ))}
                 </div>
