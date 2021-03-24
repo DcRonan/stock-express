@@ -73,7 +73,9 @@ const StockList = () => {
         return (
           <>
             <header className="sm:mb-4">
-              <h1 className="hidden sm:block sm:text-2xl md:text-3xl font-medium">Stock Express</h1>
+              <h1 className="hidden sm:block sm:text-2xl md:text-3xl font-medium">
+                Stock Express
+              </h1>
             </header>
             <section className="pt-6 border-gray-700 sm:border-t">
               <div className="flex w-full">
@@ -183,29 +185,50 @@ const StockList = () => {
         </div>
         {showData()}
         {/* PAGINATION */}
-        {currentPage > 2 ? (
-          <button type="button" onClick={() => paginate(1)}>
-            Back to first page
-          </button>
-        ) : (
-          ''
-        )}
-        {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
-        <p>
-          <b>{currentPage}</b>
-        </p>
-        <p>{currentPage + 1}</p>
-        {currentPage > 1 ? (
-          <button type="button" onClick={() => paginate(currentPage - 1)}>
-            Previous
-          </button>
-        ) : (
-          ''
-        )}
-        <button type="button" onClick={() => paginate(currentPage + 1)}>
-          Next
-        </button>
-        <br />
+        <section className="w-full flex justify-center py-4">
+          <div className="flex flex-col items-center space-y-3">
+            <div className="flex items-center space-x-4">
+              {currentPage > 1 ? (
+                <button
+                  type="button"
+                  onClick={() => paginate(currentPage - 1)}
+                  className="focus:outline-none border-0 bg-blue-600 rounded-md p-2"
+                >
+                  Previous
+                </button>
+              ) : (
+                ''
+              )}
+              <div className="flex items-center space-x-4">
+                {currentPage > 1 ? <p>{currentPage - 1}</p> : ''}
+                <p className="text-3xl">
+                  <b>{currentPage}</b>
+                </p>
+                <p>{currentPage + 1}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => paginate(currentPage + 1)}
+                className="focus:outline-none border-0 bg-green-600 rounded-md p-2"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div className="ml-6">
+            {currentPage > 2 ? (
+              <button
+                type="button"
+                onClick={() => paginate(1)}
+                className="focus:outline-none border-0 bg-red-700 bg-opacity-75 rounded-md p-2"
+              >
+                Page 1
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
+        </section>
       </div>
     </>
   );

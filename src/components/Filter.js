@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Filter = ({ filteredStocks }) => (
   <>
-    <header className="mb-4">
-      <h1 className="text-3xl font-medium">Stocks</h1>
+    <header className="sm:mb-4">
+      <h1 className="hidden sm:block sm:text-2xl md:text-3xl font-medium">
+        Stock Express
+      </h1>
     </header>
     <section className="border-t pt-6 border-gray-700">
       <div className="flex w-full">
