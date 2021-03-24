@@ -156,7 +156,7 @@ const StockList = () => {
 
   return (
     <>
-      <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light bg-darkgrey">
+      <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light">
         {/* SEARCH */}
         <div className="float-right pr-2 space-x-2 flex pb-6 sm:pb-0">
           <input

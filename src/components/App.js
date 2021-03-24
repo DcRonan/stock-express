@@ -6,7 +6,7 @@ const App = () => (
   <>
     <div className="flex w-screen">
       <Navbar />
-      <main className=" w-full h-full bg-darkgrey font-sans">
+      <main className=" w-full h-full font-sans">
         <Routes />
       </main>
     </div>
