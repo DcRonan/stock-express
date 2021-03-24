@@ -17,7 +17,7 @@ const Stock = ({ match }) => {
       const stockData = stock.data[stockSymbol];
       return (
         <>
-          <div className="space-y-6 flex flex-col items-center justify-center overflow-x-hidden py-10">
+          <div className="space-y-6 flex flex-col items-center justify-center overflow-x-hidden">
             {stockData[0].image !== null ? (
               <img
                 src={stockData[0].image}
