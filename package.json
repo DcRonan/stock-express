@@ -10,7 +10,6 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "eslint-config-airbnb": "^18.1.0",
-    "jest": "^26.6.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
