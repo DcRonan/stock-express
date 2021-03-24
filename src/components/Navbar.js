@@ -11,6 +11,7 @@ const Navbar = () => (
           alt="stock app logo"
         />
       </NavLink>
+      <h1 className="text-2xl sm:hidden">Stock Express</h1>
     </div>
   </nav>
 );

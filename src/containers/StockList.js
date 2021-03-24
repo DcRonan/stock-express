@@ -72,10 +72,10 @@ const StockList = () => {
       if (clearSearch === false) {
         return (
           <>
-            <header className="mb-4">
-              <h1 className="text-3xl font-medium">Stocks</h1>
+            <header className="sm:mb-4">
+              <h1 className="hidden sm:block sm:text-2xl md:text-3xl font-medium">Stock Express</h1>
             </header>
-            <section className="border-t pt-6 border-gray-700">
+            <section className="pt-6 border-gray-700 sm:border-t">
               <div className="flex w-full">
                 <div className="w-2/6 md:w-2/12">
                   <h2 className="pb-2 font-semibold">Symbol</h2>
@@ -156,7 +156,7 @@ const StockList = () => {
     <>
       <div className="mt-28 sm:mt-0 sm:ml-32 h-screen px-4 sm:px-0 sm:py-8 text-white font-light bg-darkgrey">
         {/* SEARCH */}
-        <div className="float-right pr-2 space-x-2 flex">
+        <div className="float-right pr-2 space-x-2 flex pb-6 sm:pb-0">
           <input
             className="border-2 text-black focus:outline-none px-2 py-1 font-light rounded-md"
             ref={searchBox}
