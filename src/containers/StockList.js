@@ -162,7 +162,7 @@ const StockList = () => {
           <input
             className="border-2 text-black focus:outline-none px-2 py-1 font-light rounded-md"
             ref={searchBox}
-            placeholder="Amazon..."
+            placeholder="Tesla..."
             type="search"
             onChange={e => setFilter(e.target.value)}
           />
