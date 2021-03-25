@@ -44,7 +44,7 @@ Reference: Catalogue of Dog Clothes
 
 ## Live Demo 🎥
 
-<a href="https://605b933ea50aa800085c5236--peaceful-visvesvaraya-32f656.netlify.app/"> LIVE DEMO! </a>
+<a href="https://stock-express.netlify.app/"> LIVE DEMO! </a>
 
 ## Install ⏳
 
