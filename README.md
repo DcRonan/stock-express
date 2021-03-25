@@ -15,11 +15,13 @@
 
 ## Description
 
-> Write about the project...
+> I have created a web-application that lets you check the stock market while all information is being retrieved from an API.
 
-![screenshot](./assets/)
+![screenshot](./public/assets/main-sc.png)
 
-Additional description of the project and its features...
+I have built this responsive SPA (Single Page Application) using React, Redux and Tailwind CSS. I added pagination to handle large amounts of data and an option to filter the stocks by searching.
+
+Reference: Catalogue of Dog Clothes
 
 ## Built With 🛠
 
@@ -28,7 +30,7 @@ Additional description of the project and its features...
 - Redux
 - JavaScript
 - Tailwind CSS
-- Heroku
+- Netlify
 - VS Code
 ```
 
@@ -36,13 +38,13 @@ Additional description of the project and its features...
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white&labelColor=000)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white&labelColor=000)
 ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=Tailwind-CSS&logoColor=white&labelColor=000)
-![Heroku](https://img.shields.io/badge/-Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white&labelColor=000)
 ![npm](https://img.shields.io/badge/-npm-CB3837?style=for-the-badge&logo=npm&logoColor=white&labelColor=000)
+![Netlify](https://img.shields.io/badge/-Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=white&labelColor=000)
 ![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?style=for-the-badge&logo=Visual-Studio-Code&logoColor=white&labelColor=000)
 
 ## Live Demo 🎥
 
-<a href="https://app.netlify.com/start/repos"> LIVE DEMO! </a>
+<a href="https://605b933ea50aa800085c5236--peaceful-visvesvaraya-32f656.netlify.app/"> LIVE DEMO! </a>
 
 ## Install ⏳
 
@@ -53,7 +55,13 @@ Additional description of the project and its features...
 3. - [ ] Run `git clone git@github.com:DcRonan/stock-express.git` to download <b>or</b> you can download using `HTTPS` by running `git clone https://github.com/DcRonan/stock-express.git` in the terminal
 4. - [ ] Run `cd stock-express` to enter the directory
 5. - [ ] Run `npm i` to install all the packages
-6. - [ ] Run `npm start` and the app will open
+6. - [ ] Click [here](https://financialmodelingprep.com/login) to create an account and retrieve your own API key
+7. - [ ] Click on Dashboard to access your API key or find it in the docs section like so:
+![api key](./public/assets/api.png)
+8. - [ ] Open a text editor, `VS Code` for an example
+9. - [ ] Create a `.env` file in your project root directory
+10. - [ ]  In the `.env` file, copy and paste `REACT_APP_STOCK_EXPRESS_API_KEY=YOUR_API_KEY_HERE`
+11. - [ ] Run `npm start` and the app will open
 
 
 ## Testing ⚙
@@ -64,7 +72,6 @@ Additional description of the project and its features...
 2. - [ ] Run `cd stock-express` to enter the directory
 3. - [ ] Run `npm test` to start testing
 4. - [ ] All tests will pass ✅
-
 
 ## Authors
 
@@ -77,7 +84,7 @@ Additional description of the project and its features...
 
 ### Acknowledgements ⭐
 
-<<<<<<<<<<<------------->>>>>>>>>>>
+Design by [Kevin Dukkon](https://dribbble.com/Kevinduk) - Design [here](https://dribbble.com/shots/14504056--Watchlist-Stocklabs)
 
 ### 🤝 Contributing
 
