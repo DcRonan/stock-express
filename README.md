@@ -21,8 +21,6 @@
 
 I have built this responsive SPA (Single Page Application) using React, Redux and Tailwind CSS. I added pagination to handle large amounts of data and an option to filter the stocks by searching.
 
-Reference: Catalogue of Dog Clothes
-
 ## Built With 🛠
 
 ```
