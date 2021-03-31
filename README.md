@@ -26,6 +26,7 @@ I have built this responsive SPA (Single Page Application) using React, Redux an
 ```
 - React
 - Redux
+- FMP API
 - JavaScript
 - Tailwind CSS
 - Netlify
